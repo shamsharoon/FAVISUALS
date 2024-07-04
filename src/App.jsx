@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="md:ml-[223px]">
+      <div className="md:ml-[223px] flex flex-col gap-5">
         <Hero />
         <About />
         <Portfolio />

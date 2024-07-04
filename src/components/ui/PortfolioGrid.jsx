@@ -5,15 +5,21 @@ import video3 from "../../assets/vid3.mp4";
 import video4 from "../../assets/vid4.mp4";
 import video5 from "../../assets/vid5.mp4";
 import video6 from "../../assets/vid6.mp4";
+import thumb1 from "../../assets/thumb1.jpg"; // Add your thumbnail images
+import thumb2 from "../../assets/thumb2.jpg";
+import thumb3 from "../../assets/thumb3.jpg";
+import thumb4 from "../../assets/thumb4.jpg";
+import thumb5 from "../../assets/thumb5.jpg";
+import thumb6 from "../../assets/thumb6.jpg";
 
-// Sample list of local video paths (replace with your actual local video paths)
+// Sample list of local video paths and thumbnails (replace with your actual local video paths and thumbnails)
 const videos = [
-  { id: 1, src: video1, title: 'Exotic Rides 🌴🚀' },
-  { id: 2, src: video2, title: 'Luxury Lexus 🚗💎' },
-  { id: 3, src: video3, title: 'Classic Car Showdown 🚗🕶️' },
-  { id: 4, src: video4, title: 'Midnight Racers 🌌🏎️' },
-  { id: 5, src: video5, title: 'Street King 🏙️👑' },
-  { id: 6, src: video6, title: 'Supercar Symphony 🎶🚀' },
+  { id: 1, src: video1, title: 'Exotic Rides 🌴🚀', poster: thumb1 },
+  { id: 2, src: video2, title: 'Luxury Lexus 🚗💎', poster: thumb2 },
+  { id: 3, src: video3, title: 'Classic Car Showdown 🚗🕶️', poster: thumb3 },
+  { id: 4, src: video4, title: 'Midnight Racers 🌌🏎️', poster: thumb4 },
+  { id: 5, src: video5, title: 'Street King 🏙️👑', poster: thumb5 },
+  { id: 6, src: video6, title: 'Supercar Symphony 🎶🚀', poster: thumb6 },
 ];
 
 function PortfolioGrid() {
@@ -42,6 +48,7 @@ function PortfolioGrid() {
               id={`video-${video.id}`}
               src={video.src}
               title={video.title}
+              poster={video.poster}
               className="absolute top-0 left-0 w-full h-full rounded-xl"
               playsInline
               muted
