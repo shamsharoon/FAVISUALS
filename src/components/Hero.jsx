@@ -84,17 +84,17 @@ function Hero() {
           <p className="lg:text-[20px] text-[12px] font-medium text-white">
             📍 TORONTO, ONTARIO
           </p>
-          <h1 className="text-primary text-[36px] lg:text-[96px] font-bold">
+          <h1 className="text-primary text-[36px] lg:text-[96px] font-bold lg:pb-12 pb-[400px]">
             {text}
             <Cursor />
           </h1>
           {showStartText && (
-            <p className="lg:text-[24px] block lg:hidden text-[16px] font-medium pb-5 lg:pb-10 text-white/50 cursor-pointer">
+            <p className="lg:text-[24px] block lg:hidden text-[16px] font-medium pb-5 lg:pb-10 text-white/100 cursor-pointer">
               Start Video
             </p>
           )}
           {showFerdawsText && (
-            <p className="lg:text-[24px] block lg:hidden text-[16px] font-medium pb-5 lg:pb-10 text-white/50">
+            <p className="lg:text-[24px] block lg:hidden text-[16px] font-medium pb-5 lg:pb-10 text-white/100">
               Ferdaws Amini
             </p>
           )}
