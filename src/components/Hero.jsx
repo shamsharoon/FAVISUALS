@@ -13,6 +13,8 @@ function Hero() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [showStartText, setShowStartText] = useState(true); // State to show the "Start Video" text
+  const [showFerdawsText, setShowFerdawsText] = useState(false); // State to show "Ferdaws Amini" text
 
   useEffect(() => {
     const video = document.getElementById('bg-video');
@@ -36,16 +38,24 @@ function Hero() {
     };
   }, []);
 
-  const handleDivClick = () => {
+  const handlePlayVideo = () => {
     const video = document.getElementById('bg-video');
+    video.play()
+      .then(() => {
+        setIsVideoPlaying(true);
+        setShowStartText(false); // Hide the "Start Video" text once video starts playing
+      })
+      .catch(error => {
+        console.error('Error playing video:', error);
+      });
+  };
+
+  const handleDivClick = () => {
     if (!isVideoPlaying) {
-      video.play()
-        .then(() => {
-          setIsVideoPlaying(true);
-        })
-        .catch(error => {
-          console.error('Error playing video:', error);
-        });
+      handlePlayVideo();
+    } else {
+      setShowStartText(false); // Hide the "Start Video" text if video is already playing
+      setShowFerdawsText(true); // Show "Ferdaws Amini" text when clicked
     }
   };
 
@@ -63,6 +73,7 @@ function Hero() {
           loop
           muted
           playsInline
+          controls={false}
           preload="metadata"
           src={videoBg}
           className="absolute top-0 left-0 w-full h-full object-cover"
@@ -72,16 +83,23 @@ function Hero() {
           <p className="lg:text-[20px] text-[12px] font-medium text-white">
             📍 TORONTO, ONTARIO
           </p>
-          <h1 className="text-primary text-[36px] lg:text-[96px] font-bold pb-2">
+          <h1 className="text-primary text-[36px] lg:text-[96px] font-bold">
             {text}
             <Cursor />
           </h1>
-          <p className="lg:text-[24px] block md:hidden text-[16px] font-medium pb-5 lg:pb-10 text-white/50">
-            Tap to Start
-          </p>
-          <p className="lg:text-[24px] hidden md:block text-[24px] font-medium text-white/60">
-            Ferdaws Amini
-          </p>
+          {showStartText && (
+            <p className="lg:text-[24px] block lg:hidden text-[16px] font-medium pb-5 lg:pb-10 text-white/50 cursor-pointer">
+              Start Video
+            </p>
+          )}
+          {showFerdawsText && (
+            <p className="lg:text-[24px] block lg:hidden text-[16px] pb-5 lg:pb-10 font-medium text-white/0">
+              Ferdaws Amini
+            </p>
+          )}
+          <p className="lg:text-[18px] lg:block hidden text-[16px] mx-52 font-medium text-white">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro consequuntur quis quae perferendis. Temporibus, sunt impedit non voluptas distinctio, architecto dolores nam quibusdam optio neque fuga quas. Accusamus, alias et!
+            </p>
         </div>
       </div>
     </div>

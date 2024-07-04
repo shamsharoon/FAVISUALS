@@ -18,8 +18,8 @@ function Portfolio() {
         </div>
       </div>
 
-      <div className="text pt-10 text-center">
-        <p className="text-base font-semibold text-white/80">Click to View My Work</p>
+      <div className="text md:pt-32 pt-12 text-center">
+        <p className="text-xl font-medium text-white/100">Click to View My Work</p>
       </div>
       <div className="images">
         <PortfolioGrid />
