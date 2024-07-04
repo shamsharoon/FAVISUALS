@@ -44,6 +44,7 @@ function Hero() {
       .then(() => {
         setIsVideoPlaying(true);
         setShowStartText(false); // Hide the "Start Video" text once video starts playing
+        setShowFerdawsText(true); // Show "Ferdaws Amini" text immediately after video starts
       })
       .catch(error => {
         console.error('Error playing video:', error);
@@ -54,8 +55,8 @@ function Hero() {
     if (!isVideoPlaying) {
       handlePlayVideo();
     } else {
-      setShowStartText(false); // Hide the "Start Video" text if video is already playing
-      setShowFerdawsText(true); // Show "Ferdaws Amini" text when clicked
+      setShowStartText(false); // Toggle "Start Video" text visibility
+      setShowFerdawsText(true); // Toggle "Ferdaws Amini" text visibility
     }
   };
 
@@ -98,8 +99,8 @@ function Hero() {
             </p>
           )}
           <p className="lg:text-[18px] lg:block hidden text-[16px] mx-52 font-medium text-white">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro consequuntur quis quae perferendis. Temporibus, sunt impedit non voluptas distinctio, architecto dolores nam quibusdam optio neque fuga quas. Accusamus, alias et!
-            </p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro consequuntur quis quae perferendis. Temporibus, sunt impedit non voluptas distinctio, architecto dolores nam quibusdam optio neque fuga quas. Accusamus, alias et!
+          </p>
         </div>
       </div>
     </div>
