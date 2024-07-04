@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import videoBg from "../assets/bg.mp4";
+import Spinner from "./ui/Spinner";
 
 function Hero() {
   const [text] = useTypewriter({
@@ -19,10 +20,13 @@ function Hero() {
     const handleLoadedData = () => {
       setIsLoading(false);
       document.body.classList.add('loaded');
-      if (!isVideoPlaying) {
-        video.play();
-        setIsVideoPlaying(true);
-      }
+      video.play()
+        .then(() => {
+          setIsVideoPlaying(true);
+        })
+        .catch(error => {
+          console.error('Error playing video:', error);
+        });
     };
 
     video.addEventListener('loadeddata', handleLoadedData);
@@ -30,17 +34,18 @@ function Hero() {
     return () => {
       video.removeEventListener('loadeddata', handleLoadedData);
     };
-  }, [isVideoPlaying]);
-
-  const handlePlayVideo = () => {
-    const video = document.getElementById('bg-video');
-    video.play();
-    setIsVideoPlaying(true);
-  };
+  }, []);
 
   const handleDivClick = () => {
     if (!isVideoPlaying) {
-      handlePlayVideo();
+      const video = document.getElementById('bg-video');
+      video.play()
+        .then(() => {
+          setIsVideoPlaying(true);
+        })
+        .catch(error => {
+          console.error('Error playing video:', error);
+        });
     }
   };
 
@@ -48,7 +53,7 @@ function Hero() {
     <div className="relative w-full h-screen" onClick={handleDivClick}>
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-black z-50 transition-opacity duration-500 ease-in-out opacity-100">
-          <div className="text-white">Loading...</div>
+          <Spinner />
         </div>
       )}
       <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
