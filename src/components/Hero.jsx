@@ -37,8 +37,8 @@ function Hero() {
   }, []);
 
   const handleDivClick = () => {
+    const video = document.getElementById('bg-video');
     if (!isVideoPlaying) {
-      const video = document.getElementById('bg-video');
       video.play()
         .then(() => {
           setIsVideoPlaying(true);
