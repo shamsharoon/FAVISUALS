@@ -11,15 +11,32 @@ function Hero() {
   });
 
   const [isLoading, setIsLoading] = useState(true);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
     const video = document.getElementById('bg-video');
-    video.oncanplaythrough = () => {
+
+    const handleLoadedData = () => {
       setIsLoading(false);
       document.body.classList.add('loaded');
-      video.play();
+      if (!isVideoPlaying) {
+        video.play();
+        setIsVideoPlaying(true);
+      }
     };
-  }, []);
+
+    video.addEventListener('loadeddata', handleLoadedData);
+
+    return () => {
+      video.removeEventListener('loadeddata', handleLoadedData);
+    };
+  }, [isVideoPlaying]);
+
+  const handlePlayVideo = () => {
+    const video = document.getElementById('bg-video');
+    video.play();
+    setIsVideoPlaying(true);
+  };
 
   return (
     <div className="relative w-full h-screen">
@@ -35,7 +52,7 @@ function Hero() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           src={videoBg}
           className="absolute top-0 left-0 w-full h-full object-cover"
         ></video>
@@ -51,9 +68,11 @@ function Hero() {
           <p className="lg:text-[24px] text-[16px] font-medium pb-5 lg:pb-10 text-white">
             Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum .{" "}
           </p>
-          <button className="h-14 w-48 lg:text-[24px] text-[20px] font-semibold bg-primary rounded-lg text-black">
-            Hire me
-          </button>
+          {!isVideoPlaying && (
+            <button className="h-14 w-48 lg:text-[24px] text-[20px] font-semibold bg-primary rounded-lg text-black" onClick={handlePlayVideo}>
+              Play Video
+            </button>
+          )}
         </div>
       </div>
     </div>
