@@ -72,12 +72,15 @@ function Hero() {
           <p className="lg:text-[20px] text-[12px] font-medium text-white">
             📍 TORONTO, ONTARIO
           </p>
-          <h1 className="text-primary text-[36px] lg:text-[96px] font-bold">
+          <h1 className="text-primary text-[36px] lg:text-[96px] font-bold pb-2">
             {text}
             <Cursor />
           </h1>
-          <p className="lg:text-[24px] text-[16px] font-medium pb-5 lg:pb-10 text-white">
-            Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum .{" "}
+          <p className="lg:text-[24px] block md:hidden text-[16px] font-medium pb-5 lg:pb-10 text-white/50">
+            Tap to Start
+          </p>
+          <p className="lg:text-[24px] hidden md:block text-[24px] font-medium text-white/60">
+            Ferdaws Amini
           </p>
         </div>
       </div>
