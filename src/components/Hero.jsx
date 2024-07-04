@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import videoBg from "../assets/bg.mp4";
 
@@ -10,9 +10,24 @@ function Hero() {
     typeSpeed: 100,
   });
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const video = document.getElementById('bg-video');
+    video.oncanplaythrough = () => {
+      setIsLoading(false);
+    };
+  }, []);
+
   return (
     <div className="relative w-full h-screen">
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black z-50">
+          <div className="text-white">Loading...</div>
+        </div>
+      )}
       <video
+        id="bg-video"
         autoPlay
         loop
         muted
