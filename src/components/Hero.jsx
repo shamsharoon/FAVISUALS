@@ -15,7 +15,10 @@ function Hero() {
   return (
     <div className="Hero">
       <div className="overlay"></div>
-      <video autoPlay loop muted src={videoBg}></video>
+      <video autoPlay
+              loop
+              muted
+              playsInline src={videoBg}></video>
       <div className="content w-screen">
         <p className="lg:text-[20px] text-[12px] font-medium">
           📍 TORONTO, ONTARIO
