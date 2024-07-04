@@ -38,8 +38,14 @@ function Hero() {
     setIsVideoPlaying(true);
   };
 
+  const handleDivClick = () => {
+    if (!isVideoPlaying) {
+      handlePlayVideo();
+    }
+  };
+
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen" onClick={handleDivClick}>
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-black z-50 transition-opacity duration-500 ease-in-out opacity-100">
           <div className="text-white">Loading...</div>
@@ -68,11 +74,6 @@ function Hero() {
           <p className="lg:text-[24px] text-[16px] font-medium pb-5 lg:pb-10 text-white">
             Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum .{" "}
           </p>
-          {!isVideoPlaying && (
-            <button className="h-14 w-48 lg:text-[24px] text-[20px] font-semibold bg-primary rounded-lg text-black" onClick={handlePlayVideo}>
-              Play Video
-            </button>
-          )}
         </div>
       </div>
     </div>
