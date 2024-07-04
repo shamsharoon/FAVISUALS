@@ -93,7 +93,7 @@ function Hero() {
             </p>
           )}
           {showFerdawsText && (
-            <p className="lg:text-[24px] block lg:hidden text-[16px] pb-5 lg:pb-10 font-medium text-white/0">
+            <p className="lg:text-[24px] block lg:hidden text-[16px] font-medium pb-5 lg:pb-10 text-white/50">
               Ferdaws Amini
             </p>
           )}
