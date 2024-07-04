@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import video1 from "../../assets/vid1.mp4";
 import video2 from "../../assets/vid2.mp4";
 import video3 from "../../assets/vid3.mp4";
@@ -17,23 +17,39 @@ const videos = [
 ];
 
 function PortfolioGrid() {
+  const [playing, setPlaying] = useState({});
+
+  const handleVideoClick = (id) => {
+    const videoElement = document.getElementById(`video-${id}`);
+    if (playing[id]) {
+      videoElement.pause();
+    } else {
+      videoElement.play();
+    }
+    setPlaying((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+
   return (
     <div className="mx-10 py-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {videos.map((video) => (
-          <div key={video.id} className="relative w-full h-0 pb-[56.25%] border-2 border-primary rounded-xl">
+        {videos.map((video, index) => (
+          <div
+            key={video.id}
+            className="relative w-full h-0 pb-[56.25%] border-2 border-primary rounded-xl"
+            onClick={() => handleVideoClick(video.id)}
+          >
             <video
+              id={`video-${video.id}`}
               src={video.src}
               title={video.title}
               className="absolute top-0 left-0 w-full h-full rounded-xl"
-              autoPlay
-              loop
-              muted
               playsInline
+              muted
+              loop
             ></video>
             <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-xl"></div>
-            <div className="absolute inset-0 flex items-end justify-center p-4">
-              <h3 className="text-white md:text-lg text-md font-medium text-center">{video.title}</h3>
+            <div className={`absolute inset-0 flex items-end justify-${index % 2 === 0 ? 'start' : 'end'} p-4`}>
+              <h3 className="text-white md:text-lg text-md font-medium">{video.title}</h3>
             </div>
           </div>
         ))}
