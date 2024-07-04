@@ -34,3 +34,22 @@ video{
     left: 0;
     background-color: rgba(0, 0, 0, 0.76);
 }
+
+/* Add this CSS to your styles */
+
+#bg-video {
+    display: none;
+  }
+  
+  .loaded #bg-video {
+    display: block;
+  }
+  
+  .loaded .overlay {
+    display: block;
+  }
+  
+  .loaded .content {
+    display: block;
+  }
+  
