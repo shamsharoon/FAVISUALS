@@ -22,17 +22,6 @@ const videos = [
 ];
 
 function PortfolioGrid() {
-  const [playing, setPlaying] = useState({});
-
-  const handleVideoClick = (id) => {
-    const videoElement = document.getElementById(`video-${id}`);
-    if (playing[id]) {
-      videoElement.pause();
-    } else {
-      videoElement.play();
-    }
-    setPlaying((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
 
   return (
     <div className="mx-10 py-5">
@@ -41,7 +30,6 @@ function PortfolioGrid() {
           <div
             key={video.id}
             className="relative w-full h-0 pb-[56.25%] border-2 border-primary rounded-xl cursor-pointer"
-            onClick={() => handleVideoClick(video.id)}
           >
             <video
               id={`video-${video.id}`}
@@ -49,6 +37,7 @@ function PortfolioGrid() {
               title={video.title}
               poster={video.poster}
               className="absolute top-0 left-0 w-full h-full rounded-xl"
+              autoPlay
               playsInline
               muted
               loop

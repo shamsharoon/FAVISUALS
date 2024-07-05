@@ -12,7 +12,7 @@ const pricingData = [
     ],
     buttonText: 'Get started',
     buttonLink: '#',
-    bgClass: 'bg-[#5E5E5E]',
+    bgClass: 'bg-[#131313]',
     textColor: 'text-white',
     titleColor: 'text-white',
     translateY: 'lg:translate-y-[40px]'
@@ -29,9 +29,9 @@ const pricingData = [
     ],
     buttonText: 'Get started',
     buttonLink: '#',
-    bgClass: 'bg-[#5E5E5E]',
+    bgClass: 'bg-[#2E2E2F]',
     textColor: 'text-white',
-    titleColor: 'text-primary',
+    titleColor: 'text-primary text-5xl font-extrabold',
     translateY: 'lg:translate-y-[0px]'
   },
   {
@@ -45,7 +45,7 @@ const pricingData = [
     ],
     buttonText: 'Get started',
     buttonLink: '#',
-    bgClass: 'bg-[#5E5E5E]',
+    bgClass: 'bg-[#131313]',
     textColor: 'text-white',
     titleColor: 'text-white',
     translateY: 'lg:translate-y-[40px]'
@@ -63,8 +63,8 @@ function Pricing() {
         <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
           {/* Map over pricingData to render pricing cards */}
           {pricingData.map((item, index) => (
-            <div key={index} className={`flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 ${item.translateY} bg-[#131313] rounded-xl border-4 border-primary shadow`}>
-              <h3 className={`mb-4 text-2xl ${item.titleColor} font-semibold`}>{item.title}</h3>
+            <div key={index} className={`flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 ${item.translateY} ${item.bgClass} rounded-xl border-4 border-primary shadow`}>
+              <h3 className={`mb-4 text-2xl ${item.titleColor}`}>{item.title}</h3>
               <p className={`font-medium ${item.textColor} sm:text-lg`}>{item.description}</p>
               <div className="flex justify-center items-baseline my-8">
                 <span className="mr-2 text-5xl text-white font-extrabold">{item.price}</span>
