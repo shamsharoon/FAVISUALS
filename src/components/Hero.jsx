@@ -99,7 +99,7 @@ function Hero() {
           <p className="lg:text-[18px] lg:block hidden text-[16px] mx-52 font-medium text-white">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro consequuntur quis quae perferendis. Temporibus, sunt impedit non voluptas distinctio, architecto dolores nam quibusdam optio neque fuga quas. Accusamus, alias et!
           </p>
-          <div className="absolute lg:bottom-32  flex justify-center w-full">
+          <div className="absolute lg:bottom-32 bottom-32 flex justify-center w-full">
             <svg className="w-12 h-12 animate-bounce text-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"></path>
             </svg>
