@@ -40,7 +40,7 @@ function PortfolioGrid() {
         {videos.map((video, index) => (
           <div
             key={video.id}
-            className="relative w-full h-0 pb-[56.25%] border-2 border-primary rounded-xl"
+            className="relative w-full h-0 pb-[56.25%] border-2 border-primary rounded-xl cursor-pointer"
             onClick={() => handleVideoClick(video.id)}
           >
             <video

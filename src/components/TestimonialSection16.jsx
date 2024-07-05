@@ -27,7 +27,7 @@ function TestimonialCard({ img, client, title, clientInfo }) {
     <Card shadow={false} className="bg-primary rounded-2xl p-6">
       <CardHeader color="transparent" floated={false} shadow={false}>
         <Typography
-          color=""
+          color="current"
           className="lg:mb-20 mb-4 text-2xl font-bold text-black"
         >
           &quot;{title}&quot;
@@ -35,12 +35,12 @@ function TestimonialCard({ img, client, title, clientInfo }) {
       </CardHeader>
       <CardBody className="px-4 py-0 flex flex-wrap-reverse gap-x-6 justify-between items-center">
         <div>
-          <Typography variant="h6" color="blue-gray" className="text-2xl">
+          <Typography variant="h6" color="black" className="text-2xl font-extrabold">
             {client}
           </Typography>
           <Typography
             variant="paragraph"
-            className="font-bold !text-black text-sm"
+            className="font-medium !text-black text-sm"
           >
             {clientInfo}
           </Typography>
@@ -57,7 +57,7 @@ export function TestimonialSection16() {
       <div className="container mx-auto">
         <Typography
           variant="h2"
-          color=""
+          color="current"
           className="mb-4 !text-2xl lg:!text-4xl text-primary font-bold"
         >
           The Heartfelt Testimonials of Clients
@@ -92,12 +92,12 @@ export function TestimonialSection16() {
               className="max-w-[8rem] mx-auto grayscale"
               alt="spotify"
             />
-            <Typography variant="h6" color="blue-gray" className="text-2xl">
+            <Typography variant="h6" color="black" className="text-2xl font-extrabold">
               Ferdaws Amini
             </Typography>
             <Typography
               variant="paragraph"
-              className="font-bold !text-black"
+              className="font-normal !text-black"
             >
               Graphic Designer
             </Typography>

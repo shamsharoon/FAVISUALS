@@ -13,8 +13,8 @@ function Hero() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  const [showStartText, setShowStartText] = useState(true); // State to show the "Start Video" text
-  const [showFerdawsText, setShowFerdawsText] = useState(false); // State to show "Ferdaws Amini" text
+  const [showStartText, setShowStartText] = useState(true);
+  const [showFerdawsText, setShowFerdawsText] = useState(false);
 
   useEffect(() => {
     const video = document.getElementById('bg-video');
@@ -43,8 +43,8 @@ function Hero() {
     video.play()
       .then(() => {
         setIsVideoPlaying(true);
-        setShowStartText(false); // Hide the "Start Video" text once video starts playing
-        setShowFerdawsText(true); // Show "Ferdaws Amini" text immediately after video starts
+        setShowStartText(false);
+        setShowFerdawsText(true);
       })
       .catch(error => {
         console.error('Error playing video:', error);
@@ -55,8 +55,8 @@ function Hero() {
     if (!isVideoPlaying) {
       handlePlayVideo();
     } else {
-      setShowStartText(false); // Toggle "Start Video" text visibility
-      setShowFerdawsText(true); // Toggle "Ferdaws Amini" text visibility
+      setShowStartText(false);
+      setShowFerdawsText(true);
     }
   };
 
@@ -89,7 +89,7 @@ function Hero() {
             <Cursor />
           </h1>
           {showStartText && (
-            <p className="lg:text-[24px] block lg:hidden text-[16px] font-medium pb-5 lg:pb-10 text-white/100 cursor-pointer">
+            <p className="lg:text-[24px] block lg:hidden text-[16px] font-medium py-4 px-8 rounded-full bg-primary/50 text-white/100 cursor-pointer">
               Start Video
             </p>
           )}
@@ -101,6 +101,11 @@ function Hero() {
           <p className="lg:text-[18px] lg:block hidden text-[16px] mx-52 font-medium text-white">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro consequuntur quis quae perferendis. Temporibus, sunt impedit non voluptas distinctio, architecto dolores nam quibusdam optio neque fuga quas. Accusamus, alias et!
           </p>
+          <div className="absolute bottom-10 flex justify-center w-full">
+            <svg className="w-12 h-12 animate-bounce text-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
         </div>
       </div>
     </div>
