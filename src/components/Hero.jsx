@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import videoBg from "../assets/bg.mp4";
 import Spinner from "./ui/Spinner";
+import logo from "../assets/FaVisuals_Logo.jpg";
 
 function Hero() {
   const [text] = useTypewriter({
@@ -88,6 +89,7 @@ function Hero() {
           muted
           playsInline
           preload="auto"
+          controls={false}
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source src={videoBg} type="video/mp4" />
@@ -103,9 +105,10 @@ function Hero() {
             <Cursor />
           </h1>
           {showStartText && (
-            <p className="lg:text-[24px] block lg:hidden text-[16px] font-medium py-4 px-8 rounded-full bg-primary/50 text-white/100 cursor-pointer">
-              Start Video
-            </p>
+            <div className="lg:text-[24px] absolute block lg:hidden text-[24px] w-screen h-screen font-bold flex flex-col items-center justify-center bg-black text-primary cursor-pointer">
+              <img src={logo} alt="Logo" className="w-52 h-auto mb-4 pb-10" />
+              <p className="border-4 bg-primary border-none text-gray-900 animate-bounce py-4 px-10 rounded-full">Click Me</p>
+            </div>
           )}
           {showFerdawsText && (
             <div className="absolute bottom-32 flex justify-center w-full">
