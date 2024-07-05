@@ -4,7 +4,7 @@ import PortfolioGrid from "./ui/PortfolioGrid";
 
 function Portfolio() {
   return (
-    <div className="relative h-fit overflow-hidden">
+    <div id="portfolio" className="relative translate-y-10 h-fit overflow-hidden">
       <div className="header relative">
         <img
           src={Image}

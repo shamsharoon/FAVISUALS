@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import videoBg from "../assets/bg.mp4";
 import Spinner from "./ui/Spinner";
+
 function Hero() {
   const [text] = useTypewriter({
     words: ["Videographer", "Photographer", "Editor"],
@@ -13,6 +14,7 @@ function Hero() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [showStartText, setShowStartText] = useState(true);
   const [showFerdawsText, setShowFerdawsText] = useState(false);
+
   useEffect(() => {
     const video = document.getElementById('bg-video');
     const handleLoadedData = () => {
@@ -31,6 +33,7 @@ function Hero() {
       video.removeEventListener('loadeddata', handleLoadedData);
     };
   }, []);
+
   const handlePlayVideo = () => {
     const video = document.getElementById('bg-video');
     video.play()
@@ -43,6 +46,7 @@ function Hero() {
         console.error('Error playing video:', error);
       });
   };
+
   const handleDivClick = () => {
     if (!isVideoPlaying) {
       handlePlayVideo();
@@ -51,8 +55,39 @@ function Hero() {
       setShowFerdawsText(true);
     }
   };
+
+  const smoothScrollTo = (target, duration) => {
+    const start = window.pageYOffset;
+    const targetPosition = target.getBoundingClientRect().top;
+    const startTime = performance.now();
+
+    const easeInOutQuad = (t, b, c, d) => {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    };
+
+    const scroll = () => {
+      const currentTime = performance.now();
+      const timeElapsed = currentTime - startTime;
+      const run = easeInOutQuad(timeElapsed, start, targetPosition, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) requestAnimationFrame(scroll);
+    };
+
+    requestAnimationFrame(scroll);
+  };
+
+  const handleBookNowClick = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      smoothScrollTo(contactSection, 1500); // Adjust duration as needed
+    }
+  };
+
   return (
-    <div className="relative w-full h-screen" onClick={handleDivClick}>
+    <div id="hero" className="relative w-full h-screen" onClick={handleDivClick}>
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-black z-50 transition-opacity duration-500 ease-in-out opacity-100">
           <Spinner />
@@ -81,16 +116,18 @@ function Hero() {
           </h1>
           {showStartText && (
             <p className="absolute lg:bottom-32 bottom-44 text-md font-bold lg:hidden flex justify-center w-full">
-              <button className="button-34" role="button">Start Video</button>
+              <button className="button-34" role="button" onClick={handlePlayVideo}>Start Video</button>
             </p>
           )}
           {showFerdawsText && (
-            <div></div>
+            <p className="absolute lg:bottom-32 bottom-44 text-md font-extrabold lg:hidden flex justify-center w-full">
+              <button className="button-34" role="button" onClick={handleBookNowClick}>Book Now</button>
+            </p>
           )}
-          <p className="lg:text-[18px] lg:block hidden text-[16px] mx-52 font-medium text-white">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro consequuntur quis quae perferendis. Temporibus, sunt impedit non voluptas distinctio, architecto dolores nam quibusdam optio neque fuga quas. Accusamus, alias et!
+          <p className="absolute lg:bottom-56 bottom-44 text-md font-extrabold lg:flex hidden justify-center w-full">
+            <button className="button-34" role="button" onClick={handleBookNowClick}>Book Now</button>
           </p>
-          <div className="absolute lg:bottom-32 bottom-28 flex justify-center w-full">
+          <div className="absolute lg:bottom-40 bottom-28 flex justify-center w-full">
             <svg className="w-12 h-12 animate-bounce text-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"></path>
             </svg>
@@ -100,4 +137,5 @@ function Hero() {
     </div>
   );
 }
+
 export default Hero;
