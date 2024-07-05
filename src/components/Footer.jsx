@@ -9,13 +9,13 @@ function Footer() {
       <div className="container w-full mx-auto flex flex-col items-center justify-center">
         <div className="flex space-x-6 mb-4 lg:gap-28 gap-2 pb-10">
           <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faYoutube} className='text-primary hover:bg-primary hover:text-black p-6 hover:rounded-full' size="3x" />
+            <FontAwesomeIcon icon={faYoutube} className='text-primary hover:bg-primary hover:text-black p-6 hover:rounded-full' size="2x" />
           </a>
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faInstagram} className='text-primary hover:bg-primary hover:text-black p-6 rounded-full' size="3x" />
+            <FontAwesomeIcon icon={faInstagram} className='text-primary hover:bg-primary hover:text-black p-6 rounded-full' size="2x" />
           </a>
           <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faTiktok} className='text-primary hover:bg-primary hover:text-black p-6 rounded-full' size="3x" />
+            <FontAwesomeIcon icon={faTiktok} className='text-primary hover:bg-primary hover:text-black p-6 rounded-full' size="2x" />
           </a>
         </div>
         <div className="text-center mb-10">
