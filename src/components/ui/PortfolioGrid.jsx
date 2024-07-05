@@ -13,12 +13,12 @@ import thumb5 from "../../assets/thumb5.jpg";
 import thumb6 from "../../assets/thumb6.jpg";
 
 const videos = [
-  { id: 1, src: video1, title: 'Exotic Rides 🌴🚀', poster: thumb1 },
-  { id: 2, src: video2, title: 'Luxury Lexus 🚗💎', poster: thumb2 },
-  { id: 3, src: video3, title: 'Classic Car Showdown 🚗🕶️', poster: thumb3 },
-  { id: 4, src: video4, title: 'Midnight Racers 🌌🏎️', poster: thumb4 },
-  { id: 5, src: video5, title: 'Street King 🏙️👑', poster: thumb5 },
-  { id: 6, src: video6, title: 'Supercar Symphony 🎶🚀', poster: thumb6 },
+  { id: 1, src: video1, title: 'Exotic Rides', poster: thumb1 },
+  { id: 2, src: video2, title: 'Luxury Lexus', poster: thumb2 },
+  { id: 3, src: video3, title: 'Classic Car Showdown', poster: thumb3 },
+  { id: 4, src: video4, title: 'Midnight Racers', poster: thumb4 },
+  { id: 5, src: video5, title: 'Street King', poster: thumb5 },
+  { id: 6, src: video6, title: 'Supercar Symphony', poster: thumb6 },
 ];
 
 function PortfolioGrid() {
@@ -54,8 +54,8 @@ function PortfolioGrid() {
               loop
             ></video>
             <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-xl"></div>
-            <div className={`absolute inset-0 flex items-end justify-${index % 2 === 0 ? 'start' : 'end'} p-4`}>
-              <h3 className="text-white md:text-lg text-md font-medium">{video.title}</h3>
+            <div className={`absolute inset-0 flex items-end justify-center p-4`}>
+              <h3 className="text-white md:text-md text-sm font-medium">{video.title}</h3>
             </div>
           </div>
         ))}
