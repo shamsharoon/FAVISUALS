@@ -4,8 +4,8 @@ import PortfolioGrid from "./ui/PortfolioGrid";
 
 function Portfolio() {
   return (
-    <div className="relative h-screen">
-      <div className="header">
+    <div className="relative h-fit overflow-hidden">
+      <div className="header relative">
         <img
           src={Image}
           alt="Car"
@@ -24,7 +24,6 @@ function Portfolio() {
       <div className="images">
         <PortfolioGrid />
       </div>
-        
     </div>
   );
 }

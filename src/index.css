@@ -53,4 +53,6 @@ video{
     display: block;
   }
   
-  
+.test{
+    transform: rotate(-90deg);
+}
