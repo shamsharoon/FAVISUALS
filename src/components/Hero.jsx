@@ -80,8 +80,8 @@ function Hero() {
             <Cursor />
           </h1>
           {showStartText && (
-            <p className="absolute lg:bottom-32 bottom-40 text-md font-bold lg:hidden flex justify-center w-full">
-              start video
+            <p className="absolute lg:bottom-32 bottom-44 text-md font-bold lg:hidden flex justify-center w-full">
+              <button className="button-34" role="button">Start Video</button>
             </p>
           )}
           {showFerdawsText && (

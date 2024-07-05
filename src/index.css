@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+}
+
 .Hero{
     width: 100%;
     height: 100vh;
@@ -70,4 +73,26 @@ video{
   }
   .animate-bounce {
     animation: bounce 1s infinite;
+  }
+
+  .button-34 {
+    background: #F3CE5C;
+    border-radius: 999px;
+    box-shadow: #F3CE5C 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
   }
