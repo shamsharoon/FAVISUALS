@@ -3,7 +3,7 @@ import Image from "../assets/car1.jpg"
 
 function About() {
   return (
-    <div id="about" className="h-screen flex flex-col md:flex-row items-center justify-center gap-10 md:mx-36 mx-12">
+    <div id="about" className="h-full flex flex-col md:flex-row items-center justify-center gap-10 md:mx-36 mx-12">
        <img src={Image} alt="Car" className="md:w-4/12 w-[1000px]  border-[6px] rounded-xl border-primary" />
        <div>
         <h3 className='md:text-[20px] text-[16px] font-normal'>About</h3>
