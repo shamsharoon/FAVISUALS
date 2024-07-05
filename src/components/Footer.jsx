@@ -2,13 +2,14 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-scroll";
 import Logo from "../assets/FaVisuals_Logo.jpg";
 
 function Footer() {
   return (
     <footer id="contact" className="bg-black text-white py-10 lg:py-20">
       <div className="container w-full mx-auto flex flex-col items-center justify-center">
-        <div className='w-40 pb-10'><img src={Logo} alt="Fa Visuals" /></div>
+        <Link to="hero" smooth={true} duration={1000} className='w-40 cursor-pointer pb-10'><img src={Logo} alt="Fa Visuals" /></Link>
         <div className="flex space-x-6 lg:gap-28 gap-2 pb-4 lg:pb-10">
           <a href="https://www.youtube.com/@FA.Visuals" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faYoutube} className='text-primary hover:bg-primary hover:text-black p-4 lg:p-6 rounded-full' size="2x" />

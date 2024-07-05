@@ -73,7 +73,7 @@ export function Testimonials() {
           variant="lead"
           className="max-w-3xl !text-gray-200 mb-10 lg:mb-20"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum illo fugiat neque repellat modi excepturi aliquam mollitia. Illum reprehenderit voluptas quos, hic, molestiae iure, quisquam possimus deleniti suscipit at earum?
+          At FA Visuals, our top priority is to deliver professional, high-quality work that exceeds our clients' expectations and makes them proud to promote.
         </Typography>
         <div className="grid gap-8 grid-cols-1 lg:grid-cols-2">
           {testimonials.map((props, key) => (
