@@ -71,7 +71,7 @@ function Hero() {
           className="absolute top-0 left-0 w-full h-full object-cover"
         ></video>
         <div className="absolute inset-0 bg-black opacity-60"></div>
-        <div className="relative z-10 flex flex-col items-center justify-center w-full h-full text-center">
+        <div className="relative top-10 left-0 z-10 flex flex-col items-center justify-center w-full h-full text-center">
           <p className="lg:text-[20px] text-[12px] font-medium text-white">
             📍 TORONTO, ONTARIO
           </p>
