@@ -37,7 +37,7 @@ function PortfolioGrid() {
   return (
     <div className="mx-10 py-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {videos.map((video, index) => (
+        {videos.map((video) => (
           <div
             key={video.id}
             className="relative w-full h-0 pb-[56.25%] border-2 border-primary rounded-xl cursor-pointer"

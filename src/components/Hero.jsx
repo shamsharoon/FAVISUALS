@@ -87,7 +87,7 @@ function Hero() {
   };
 
   return (
-    <div id="hero" className="relative w-full h-screen" onClick={handleDivClick}>
+    <div id="hero" className="relative w-full h-screen" onClick={handleDivClick} style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-black z-50 transition-opacity duration-500 ease-in-out opacity-100">
           <Spinner />

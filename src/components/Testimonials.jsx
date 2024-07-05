@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Card,
   CardBody,
@@ -100,7 +101,7 @@ export function Testimonials() {
               alt="Review"
             />
             <Typography variant="h6" color="black" className="text-2xl font-bold">
-            Musa Farooqui
+              Musa Farooqui
             </Typography>
             <Typography
               variant="paragraph"
