@@ -87,7 +87,7 @@ function Hero() {
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source src={videoBg} type="video/mp4" />
