@@ -5,7 +5,7 @@ const pricingData = [
   {
     title: 'Basic',
     price: '$50',
-    description: 'The Basic Video Shoot Package is designed for clients who require professional video production without post production editing ',
+    description: 'The Basic Video Shoot Package is designed for clients who require professional video production without post production editing',
     features: [
       'Professional Video',
       'Professional Scene Setting'
@@ -20,7 +20,7 @@ const pricingData = [
   {
     title: 'Premium',
     price: '$100',
-    description: 'Elevate you video content with the Premium Package. This package combines professional videos, with advanced post-production, and colour grading',
+    description: 'Elevate your video content with the Premium Package. This package combines professional videos, with advanced post-production, and colour grading',
     features: [
       'Professional Video',
       'Professional Scene Setting',
@@ -32,7 +32,8 @@ const pricingData = [
     bgClass: 'bg-[#2E2E2F]',
     textColor: 'text-white',
     titleColor: 'text-primary text-5xl font-extrabold',
-    translateY: 'lg:translate-y-[0px]'
+    translateY: 'lg:translate-y-[0px]',
+    borderClass: 'border-gold-gradient'
   },
   {
     title: 'Standard',
@@ -63,7 +64,7 @@ function Pricing() {
         <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
           {/* Map over pricingData to render pricing cards */}
           {pricingData.map((item, index) => (
-            <div key={index} className={`flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 ${item.translateY} ${item.bgClass} rounded-xl border-4 border-primary shadow`}>
+            <div key={index} className={`flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 ${item.translateY} ${item.bgClass} rounded-none border-4 shadow ${item.borderClass || 'border-primary'}`}>
               <h3 className={`mb-4 text-2xl ${item.titleColor}`}>{item.title}</h3>
               <p className={`font-medium ${item.textColor} sm:text-lg`}>{item.description}</p>
               <div className="flex justify-center items-baseline my-8">

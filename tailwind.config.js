@@ -11,7 +11,12 @@ module.exports = withMT({
         sans: ["Outfit", "sans-serif"],
       },
       colors: {
-        primary: "#F3CE5C"
+        primary: "#F3CE5C",
+        gold: '#FFD700',
+        darkorange: '#FF8C00',
+      },
+      borderColor: {
+        'gold-gradient': 'linear-gradient(90deg, #FFD700 0%, #FF8C00 100%)',
       },
     },
   },

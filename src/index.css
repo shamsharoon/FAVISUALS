@@ -4,8 +4,11 @@
 
 
 
-*{
+.border-gold-gradient {
+  border: 4px solid transparent;
+  border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #AA771C) 1;
 }
+
 
 .Hero{
     width: 100%;
